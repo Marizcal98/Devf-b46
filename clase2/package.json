@@ -1,0 +1,27 @@
+{
+  "name": "clase2",
+  "version": "1.0.0",
+  "description": "Parte 2 de clase",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marizcal98/Devf-b46.git"
+  },
+  "keywords": [
+    "axios",
+    "api",
+    "request"
+  ],
+  "author": "Marizcal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Marizcal98/Devf-b46/issues"
+  },
+  "homepage": "https://github.com/Marizcal98/Devf-b46#readme",
+  "dependencies": {
+    "axios": "^0.20.0"
+  }
+}
