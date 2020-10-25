@@ -6,32 +6,31 @@ const app = express()
 
 const PORT = 4000
 
-app.get('/', (request, response) =>{
+app.get('/', (request, response) => {
     response.send('Hola')
 })
 
-app.get('/perro', (request,response) =>{
+app.get('/perro', (request, response) => {
     response.send("Bienvenido a perroLand")
     console.log("noSimon")
 })
 
 app.get('/pokemon/:id', (request, response) => {
-    const params = request.params
-    axios.get(`https://pokeapi.co/api/v2/pokemon/${params.id}`)
-      .then(pokeApiResponse => {
-        response.json({
-          pokemon: pokeApiResponse.data.name
+    const { id } = request.params
+    axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`)
+        .then(Pokeres => {
+            response.json({
+                pokemon: Pokeres.data.name
+            })
         })
-      })
-      .catch( error => response.json({ error }))
-  
-  })
+        .catch(err => response.json({ err }))
+})
 
-app.get('/search' , (request, response) => {
+app.get('/search', (request, response) => {
     const query = request.query
     response.json({
         query: query
     })
 })
 
-app.listen(PORT, () => {console.log("Server Inicializado en HTTP://localhost:" + PORT)})
+app.listen(PORT, () => { console.log("Server Inicializado en HTTP://localhost:" + PORT) })
